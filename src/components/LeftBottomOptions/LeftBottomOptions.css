@@ -1,0 +1,30 @@
+.box__left__options {
+   height: 45px;
+   border-top: 1px solid #000000;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.active {
+   background: #000000;
+   color: #FFFFFF;
+}
+
+
+.box__left__options__item {
+   height: 44px;
+   width: 99px;
+   border-right: 1px solid #000000;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.box__left__options__item:last-child {
+   border: none;
+}
+
+.box__left__options__item:hover {
+   cursor: pointer;
+}

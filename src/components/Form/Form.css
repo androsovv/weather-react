@@ -1,0 +1,32 @@
+
+.search {
+   width: 600px;
+   height: 45px;
+   display: flex;
+   justify-content: space-between;
+   /* align-items: center; */
+   border: 1px solid #000000;
+   align-items: center;
+   padding: 10px 10px;
+}
+
+.search__img {
+   background: url(../../icons/search.svg);
+   width: 30px;
+   height: 30px;
+   border: none;
+   cursor: pointer;
+}
+
+.search__img:hover {
+   background: url(../../icons/search.svg) center center/cover no-repeat;
+   width: 35px;
+   height: 35px;
+}
+
+.search__town {
+   font-weight: 400;
+   font-size: 18px;
+   border: none;
+   outline: none;
+}

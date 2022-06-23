@@ -1,0 +1,7 @@
+.box__content {
+   height: 390px;
+   width: 600px;
+   border: 1px solid #000000;
+   border-top: none;
+   display: flex;
+}

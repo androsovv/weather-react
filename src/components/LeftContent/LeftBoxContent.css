@@ -1,0 +1,45 @@
+.box__left {
+   height: 390px;
+   width: 300px;
+   border-right: 1px solid #000000;
+   display: flex;
+   flex-direction: column;
+}
+
+.box__left__top {
+   height: 115px;
+   font-weight: 400;
+   font-size: 70px;
+   padding-left: 23px;
+   padding-top: 20px;
+}
+
+.box__left__middle {
+   height: 185px;
+   background: url(../../icons/icons8-cloud-96\ 1.svg) center center/cover no-repeat;
+   background-size: 40%;
+}
+
+
+.box__left__bottom {
+   height: 45px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding-left: 12px;
+   padding-right: 26px;
+}
+
+.box__left__bottom__town {
+   font-weight: 400;
+   font-size: 24px;
+}
+
+.box__left_bottom__favorite {
+   cursor: pointer;
+}
+
+.box__left_bottom__favorite:hover {
+   width: 28px;
+   height: 28px;
+}

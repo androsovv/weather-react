@@ -1,5 +1,6 @@
 
 
+import Details from "../Details/Details";
 import LeftBottomOptions from "../LeftBottomOptions/LeftBottomOptions";
 import "./LeftBoxContent.css";
 
@@ -7,8 +8,9 @@ const LeftBoxContent = ({townName,temperatureNow}) => {
 
 
    return (
+      
       <div className="box__left">
-
+         <Details/>
             <div className="box__left__tabs__item">
                
                <div className="box__left__tabs__one">
@@ -24,6 +26,7 @@ const LeftBoxContent = ({townName,temperatureNow}) => {
                </div>
             </div>
             <LeftBottomOptions/>
+            
          </div>
    )
 }

@@ -6,6 +6,10 @@
    flex-direction: column;
 }
 
+.box__left__tabs__one {
+   display: block;
+}
+
 .box__left__top {
    height: 115px;
    font-weight: 400;

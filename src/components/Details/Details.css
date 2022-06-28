@@ -1,0 +1,27 @@
+.box__left__tabs__two {
+    font-weight: 400;
+    font-size: 24px;
+    margin-top: 33px;
+    padding-left: 15px;
+    display: none;
+ }
+ 
+ .box__left__tabs__two__temperature {
+    margin-top: 42px;
+ }
+ 
+ .box__left__tabs__two__feels {
+    margin-top: 12px;
+ }
+ 
+ .box__left__tabs__two__weather {
+    margin-top: 12px;
+ }
+ 
+ .box__left__tabs__two__sunrise {
+    margin-top: 12px;
+ }
+ 
+ .box__left__tabs__two__sunset {
+    margin-top: 12px;
+ }

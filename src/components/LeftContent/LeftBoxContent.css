@@ -7,7 +7,7 @@
 }
 
 .box__left__tabs__one {
-   display: block;
+   display: none;
 }
 
 .box__left__top {
@@ -46,4 +46,8 @@
 .box__left_bottom__favorite:hover {
    width: 28px;
    height: 28px;
+}
+
+.show {
+   display:block;
 }

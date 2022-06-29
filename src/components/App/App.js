@@ -1,15 +1,21 @@
 
 import './App.css';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, createContext} from 'react';
 import Form from '../Form/Form';
 import MainScreen from '../MainScreen/MainScreen';
 
-function App() {
+const temperatureContext = createContext();
 
+function App() {
   const [townName, setTownName] = useState("");
-  const [temperatureNow, setTemperatureNow] = useState('-');
   const [isTyping, setIsTyping] = useState(false);
+
+  const [temperatureNow, setTemperatureNow] = useState('-');
+  const [feelsLike, setFeelsLike] = useState('-');
+  const [wheather, setWeather] = useState('-');
+  const [sunrise, setSunrise] = useState('-');
+  const [sunset, setSunset] = useState('-');
   
   // useEffect(() => {
   //   if (isTyping) {
@@ -18,7 +24,7 @@ function App() {
   //   getWeather();
   // }, [townName, isTyping]);
 
-  async function getWeather(){
+  async function getWeather() {
     const serverUrl = 'https://api.openweathermap.org/data/2.5/weather',
        apiKey = 'e6ca4f582a85a52b47aa34c1cb1f9804',
        url = `${serverUrl}?q=${townName}&appid=${apiKey}`;
@@ -29,15 +35,10 @@ function App() {
 
     setTemperatureNow(convertTemperature(response.main.temp));
     setTownName(response.name);
-
     console.log(response);
-
    } catch (err) {
     alert(err);
    }
-
-    
-
   }
 
   function convertTemperature(temp) {
@@ -45,19 +46,21 @@ function App() {
  }
 
   return (
-    <div className="App">
-     <Form 
-     townName={townName} 
-     setTownName={setTownName}
-     getWeather={getWeather}
-     isTyping={isTyping}
-     setIsTyping={setIsTyping}
-     />
-     <MainScreen 
-     townName={townName} 
-     setTownName={setTownName}
-     temperatureNow={temperatureNow}/>
-    </div>
+    <Provider.temperatureContext value={temperatureNow}>
+      <div className="App">
+          <Form 
+          townName={townName} 
+          setTownName={setTownName}
+          getWeather={getWeather}
+          isTyping={isTyping}
+          setIsTyping={setIsTyping}
+          />
+          <MainScreen 
+          townName={townName} 
+          setTownName={setTownName}
+          temperatureNow={temperatureNow}/>
+      </div>
+    </Provider.temperatureContext>
   );
 }
 

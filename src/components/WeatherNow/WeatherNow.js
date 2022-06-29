@@ -1,5 +1,7 @@
 import './WeatherNow.css';
 
+import { useContext } from 'react';
+
 const WeatherNow = ({temperatureNow, townName, toggleState}) => {
    return (
       <div className="box__left__tabs__item"> 

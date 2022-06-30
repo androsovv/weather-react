@@ -5,7 +5,7 @@ import LeftBottomOptions from "../LeftBottomOptions/LeftBottomOptions";
 import WeatherNow from "../WeatherNow/WeatherNow";
 import "./LeftBoxContent.css";
 
-const LeftBoxContent = ({townName,temperatureNow}) => {
+const LeftBoxContent = ({townName}) => {
 
    const [toggleState, setToggleState] = useState(1);
 
@@ -13,8 +13,8 @@ const LeftBoxContent = ({townName,temperatureNow}) => {
    return (
       
       <div className="box__left">
-         <Details toggleState={toggleState} setToggleState={setToggleState} townName={townName} temperatureNow={temperatureNow}/>
-         <WeatherNow townName={townName} temperatureNow={temperatureNow} toggleState={toggleState} setToggleState={setToggleState}/>
+         <Details toggleState={toggleState} setToggleState={setToggleState} townName={townName}/>
+         <WeatherNow townName={townName}  toggleState={toggleState} setToggleState={setToggleState}/>
          <LeftBottomOptions toggleState={toggleState} setToggleState={setToggleState}/>
             
          </div>

@@ -2,12 +2,17 @@ import './WeatherNow.css';
 
 import { useContext } from 'react';
 
-const WeatherNow = ({temperatureNow, townName, toggleState}) => {
+import { TemperatureContext } from '../App/App';
+
+const WeatherNow = ({townName, toggleState}) => {
+
+    const context = useContext(TemperatureContext);
+
    return (
       <div className="box__left__tabs__item"> 
                <div className={toggleState === 1 ? "box__left__tabs__one show" : "box__left__tabs__one"}>
 
-                  <div className="box__left__top temperature__now">{temperatureNow + '°'}</div>
+                  <div className="box__left__top temperature__now">{context + '°'}</div>
 
                   <div className="box__left__middle"></div>
 

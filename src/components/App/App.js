@@ -5,9 +5,10 @@ import { useState, useEffect, createContext} from 'react';
 import Form from '../Form/Form';
 import MainScreen from '../MainScreen/MainScreen';
 
-const temperatureContext = createContext();
+export const TemperatureContext = createContext();
 
 function App() {
+
   const [townName, setTownName] = useState("");
   const [isTyping, setIsTyping] = useState(false);
 
@@ -46,7 +47,7 @@ function App() {
  }
 
   return (
-    <Provider.temperatureContext value={temperatureNow}>
+    <TemperatureContext.Provider value={temperatureNow}>
       <div className="App">
           <Form 
           townName={townName} 
@@ -60,7 +61,7 @@ function App() {
           setTownName={setTownName}
           temperatureNow={temperatureNow}/>
       </div>
-    </Provider.temperatureContext>
+    </TemperatureContext.Provider>
   );
 }
 

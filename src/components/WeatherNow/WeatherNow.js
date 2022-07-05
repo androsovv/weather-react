@@ -18,7 +18,7 @@ const WeatherNow = ({townName, toggleState}) => {
 
                   <div className="box__left__bottom">
                      <div className="box__left_bottom__town town__name town__name__now">{townName}</div>
-                     <img src="../../icons/Shape.svg" alt="" className="box__left_bottom__favorite"/>
+                     <button className="box__left_bottom__favorite"/>
                   </div>
                </div>
             </div>

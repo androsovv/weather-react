@@ -39,14 +39,6 @@
    font-size: 24px;
 }
 
-.box__left_bottom__favorite {
-   cursor: pointer;
-}
-
-.box__left_bottom__favorite:hover {
-   width: 28px;
-   height: 28px;
-}
 
 .show {
    display:block;

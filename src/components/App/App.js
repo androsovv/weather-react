@@ -1,11 +1,32 @@
 
 import './App.css';
 
-import { useState, useEffect, createContext} from 'react';
+import { useState, createContext} from 'react';
 import Form from '../Form/Form';
 import MainScreen from '../MainScreen/MainScreen';
+import {createStore} from "redux";
 
 export const TemperatureContext = createContext();
+
+const defaulLocations = ['Rostov-on-Don', 'Moscow', 'Tbilisi'];
+const defaultCity = 'Rostov-on-Don';
+
+ const storageFavoriteList = createStore();
+
+ const citiesReducer = (state = [], action) => {
+     switch (action.type) {
+         case "ADD_TOWN":
+             return  {
+            ...state,
+        }
+
+         case "DELETE_TOWN":
+
+
+         default:
+             return state;
+     }
+ }
 
 function App() {
 
@@ -13,17 +34,9 @@ function App() {
   const [isTyping, setIsTyping] = useState(false);
 
   const [temperatureNow, setTemperatureNow] = useState('-');
-  const [feelsLike, setFeelsLike] = useState('-');
-  const [wheather, setWeather] = useState('-');
-  const [sunrise, setSunrise] = useState('-');
-  const [sunset, setSunset] = useState('-');
+
   
-  // useEffect(() => {
-  //   if (isTyping) {
-  //     return;
-  //   }
-  //   getWeather();
-  // }, [townName, isTyping]);
+
 
   async function getWeather() {
     const serverUrl = 'https://api.openweathermap.org/data/2.5/weather',

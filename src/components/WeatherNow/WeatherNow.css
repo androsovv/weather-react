@@ -1,3 +1,14 @@
 .box__left_bottom__favorite {
-   background: url(../../icons/Shape.svg) center center/cover no-repeat;
+    background: url(../../icons/Shape.svg) center center/cover no-repeat;
+    width: 25px;
+    height: 25px;
+    border: none;
+}
+.box__left_bottom__favorite {
+    cursor: pointer;
+}
+
+.box__left_bottom__favorite:hover {
+    width: 28px;
+    height: 28px;
 }

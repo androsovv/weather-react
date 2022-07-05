@@ -45,12 +45,13 @@
 
 .delete {
    display: block;
-   width: 12px;
-   height: 12px;
+   width: 15px;
+   height: 15px;
    cursor: pointer;
+   border: none;
 }
 
 .delete:hover {
-   width: 15px;
-   height: 15px;
+   width: 20px;
+   height: 20px;
 }

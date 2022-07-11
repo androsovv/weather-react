@@ -6,6 +6,7 @@ import Form from '../Form/Form';
 import MainScreen from '../MainScreen/MainScreen';
 import {useDispatch, useSelector} from "react-redux";
 
+
 export const TemperatureContext = createContext();
 
 
@@ -16,7 +17,13 @@ function App() {
 
   const [temperatureNow, setTemperatureNow] = useState('-');
 
+    const current = useSelector(state => state.currentCity);
+    const dispatch = useDispatch();
 
+    const chooseCurrent = (current) => {
+        dispatch({type: "CHOOSE_CURRENT", current: current})
+    }
+    console.log(current);
 
 
   async function getWeather() {
@@ -29,7 +36,11 @@ function App() {
     const response =  await weatherResponse.json();
 
     setTemperatureNow(convertTemperature(response.main.temp));
-    setTownName(response.name);
+
+    const name = response.name;
+
+    setTownName(name);
+    chooseCurrent(name);
     console.log(response);
    } catch (err) {
     alert(err);

@@ -14,24 +14,24 @@ const LocationsList = () => {
     const dispatch = useDispatch();
     const favoriteCities = useSelector(state => state.favoriteLocations);
 
-    console.log( favoriteCities);
-
 
     const deleteTown = (index) => {
         dispatch({type:"DELETE_TOWN", name: index});
     }
 
    return (
+
        <div className="box__right__towns">
-              {favoriteCities.map((item, index) =>
-                  <div key={index} className="box__right__towns__item">
-                        <div className="box__right__towns__item__name">{item}</div>
-                        <button src="srs/icons/remove-icon.svg" alt=""
-                                className="delete"
-                                onClick={() => deleteTown(index)}
-                        />
-                  </div>
-              )}
+           {favoriteCities.length > 0 ? favoriteCities.map((item, index) =>
+                   <div key={index} className="box__right__towns__item">
+                       <div className="box__right__towns__item__name">{item}</div>
+                       <button src="srs/icons/remove-icon.svg" alt=""
+                               className="delete"
+                               onClick={() => deleteTown(index)}
+                       />
+                   </div>)
+               : <div>Нет добавленых городов</div>
+           }
 
        </div>
    )

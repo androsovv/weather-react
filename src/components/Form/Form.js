@@ -1,10 +1,10 @@
 import './Form.css';
 
+
 const Form = ({townName, setTownName, getWeather, setIsTyping}) => {
 
    function handlerSubmit(e) {
       e.preventDefault();
-      // if (!townName.trim()) return;
       getWeather();
    }
 

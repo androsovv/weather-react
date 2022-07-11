@@ -4,29 +4,10 @@ import './App.css';
 import { useState, createContext} from 'react';
 import Form from '../Form/Form';
 import MainScreen from '../MainScreen/MainScreen';
-import {createStore} from "redux";
+import {useDispatch, useSelector} from "react-redux";
 
 export const TemperatureContext = createContext();
 
-const defaulLocations = ['Rostov-on-Don', 'Moscow', 'Tbilisi'];
-const defaultCity = 'Rostov-on-Don';
-
- const storageFavoriteList = createStore();
-
- const citiesReducer = (state = [], action) => {
-     switch (action.type) {
-         case "ADD_TOWN":
-             return  {
-            ...state,
-        }
-
-         case "DELETE_TOWN":
-
-
-         default:
-             return state;
-     }
- }
 
 function App() {
 
@@ -35,7 +16,7 @@ function App() {
 
   const [temperatureNow, setTemperatureNow] = useState('-');
 
-  
+
 
 
   async function getWeather() {

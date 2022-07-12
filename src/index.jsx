@@ -4,6 +4,8 @@ import './index.css';
 import App from './components/App/App';
 import {createStore} from "redux";
 import {Provider} from "react-redux";
+import {BrowserRouter, Route, Routes, Link, Switch, Redirect} from "react-router-dom";
+import Help from "./components/Help/help";
 
 const defaultState = {
     favoriteLocations: ['Rostov-on-Don', 'Moscow', 'Tbilisi'],
@@ -14,7 +16,7 @@ const defaultState = {
 const reducer = (state = defaultState, action) => {
     switch (action.type) {
         case "ADD_TOWN":
-            return  {
+            return {
                 ...state, favoriteLocations: [...state.favoriteLocations, action.current]
             };
 
@@ -39,8 +41,21 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 
 root.render(
-    <Provider store={store}>
-        <App/>
-    </Provider>
+    <BrowserRouter>
+        <nav>
+            <div className="navbar__links">
+                <Link to="/">Погода</Link>
+                <Link to="/help">Помощь</Link>
+            </div>
+        </nav>
+            <Routes>
+                <Route path="/help" element={<Help/>}/>
+                <Route path="/" element={
+                    <Provider store={store}>
+                        <App/>
+                    </Provider>}
+                />
+            </Routes>
+    </BrowserRouter>
 );
 
